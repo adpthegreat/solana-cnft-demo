@@ -9,11 +9,11 @@ import {
   sendAndConfirmTransaction,
 } from "@solana/web3.js"
 import {
-  airdropSolIfNeeded,
   getOrCreateKeypair,
   createNftMetadata,
   CollectionDetails,
   getOrCreateCollectionNFT,
+  airdropSolIfNeeded,
 } from "./utils"
 import {
   SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
@@ -30,13 +30,13 @@ import {
   getLeafAssetId,
 } from "@metaplex-foundation/mpl-bubblegum"
 import { PROGRAM_ID as TOKEN_METADATA_PROGRAM_ID } from "@metaplex-foundation/mpl-token-metadata"
-import { BN } from "@project-serum/anchor"
+// import { BN } from "@coral-xyz/anchor"
 import dotenv from "dotenv"
 dotenv.config()
 
 async function main() {
   const connection = new Connection(clusterApiUrl("devnet"), "confirmed")
-  const wallet = await getOrCreateKeypair("Wallet_1")
+  const wallet = await getOrCreateKeypair("Wallet1")
   airdropSolIfNeeded(wallet.publicKey)
 }
 
