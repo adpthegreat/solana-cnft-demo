@@ -57,5 +57,5 @@ umi.use(keypairIdentity(umiKeypair)).use(mplBubblegum()).use(dasApi());
 airdropSolIfNeeded(wallet.publicKey);
 
 
-// Demo Code Here
+
 

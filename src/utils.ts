@@ -42,9 +42,10 @@ export async function getOrCreateKeypair(walletName: string): Promise<Keypair> {
   try {
     keypair = getKeypairFromEnvironment(walletName); // throws error if keypair is invalid or does not exist
     console.log(`${walletName} PublicKey: ${keypair.publicKey.toBase58()}`);
+    console.log("Retrieved wallet from .env file successfully! ✅");
   } catch (error) {
     // If keypair doesn't exist in .env, generate a new keypair and store it
-    console.log(`Writing ${walletName} keypair to .env file...`);
+    console.log(`Writing ${walletName} Keypair to .env file...`);
 
     // Generate a new keypair
     keypair = Keypair.generate();
@@ -53,8 +54,8 @@ export async function getOrCreateKeypair(walletName: string): Promise<Keypair> {
     await addKeypairToEnvFile(keypair, walletName);
 
     console.log(`${walletName} PublicKey: ${keypair.publicKey.toBase58()}`);
+    console.log("Created wallet successfully! ✅")
   }
-
   return keypair;
 }
 
@@ -69,7 +70,7 @@ export async function airdropSolIfNeeded(publicKey: PublicKey) {
       1 * LAMPORTS_PER_SOL // Only airdrop if the balance is below 1 SOL
     );
 
-    console.log("New balance is", newBalance / LAMPORTS_PER_SOL);
+    console.log("New balance is", newBalance / LAMPORTS_PER_SOL, "SOL");
   } catch (error) {
     console.log("Airdrop Unsuccessful, likely rate-limited. Try again later.");
   }
