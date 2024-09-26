@@ -1,12 +1,12 @@
 {
   "name": "solana-cnft-demo",
   "version": "1.0.0",
-  "description": "Starter template for a Solana client script",
+  "description": "solution code for solana cnft demo",
   "main": "index.ts",
   "type": "module",
   "scripts": {
     "test": "esrun src/index.test.ts",
-    "start": "esrun src/index.ts",
+    "start": "npx esrun src/index.ts",
     "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
     "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
   },
@@ -32,7 +32,7 @@
     "@metaplex-foundation/umi": "^0.9.2",
     "@metaplex-foundation/umi-bundle-defaults": "^0.9.2",
     "@metaplex-foundation/umi-uploader-irys": "^0.10.0-beta.0",
-    "@solana-developers/helpers": "^2.5.2",
+    "@solana-developers/helpers": "^2.5.5",
     "@solana/spl-account-compression": "^0.2.1",
     "@solana/spl-token": "^0.4.8",
     "@solana/web3.js": "^1.95.3",
